@@ -21,7 +21,7 @@
         </div>
         <div class="panel panel-primary">
             <div class="panel-heading">Current Employees</div>
-            <table class="table">
+            <table class="table" id="employee-table">
                 <tr>
                     <th>Employee Name</th>
                     <th>Role</th>
@@ -35,23 +35,25 @@
         </div>
         <div class="panel panel-primary">
             <div class="panel-heading">Add Employee</div>
-            <div class="form-group">
-                <label>Employee Name:</label>
-                <input type="text" class="form-control" id="employee-name">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label>Employee Name:</label>
+                    <input type="text" class="form-control" id="employee-name">
+                </div>
+                <div class="form-group">
+                    <label>Role:</label>
+                    <input type="text" class="form-control" id="role">
+                </div>
+                <div class="form-group">
+                    <label>Date Started DD/MM/YYYY ex. 01/01/89:</label>
+                    <input type="text" class="form-control" id="date-started">
+                </div>
+                <div class="form-group">
+                    <label>Monthly Rate:</label>
+                    <input type="text" class="form-control" id="monthly-rate">
+                </div>
+                <button class="btn btn-primary" id="submit">Submit</button>
             </div>
-            <div class="form-group">
-                <label>Role:</label>
-                <input type="text" class="form-control" id="role">
-            </div>
-            <div class="form-group">
-                <label>Date Started DD/MM/YYYY ex. 01/01/89:</label>
-                <input type="text" class="form-control" id="date-started">
-            </div>
-            <div class="form-group">
-                <label>Monthly Rate:</label>
-                <input type="text" class="form-control" id="monthly-rate">
-            </div>
-            <button class="btn btn-primary" id="submit">Submit</button>
         </div>
     </div>
 

@@ -41,27 +41,26 @@ $(document).ready(function() {
       role: role,
       startDate: startDate,
       monthlyRate: monthlyRate,
-      //dateAdded: firebase.database.ServerValue.TIMESTAMP
+      dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
+
 
   });
 
   // Firebase watcher + initial loader + order/limit HINT: .on("child_added"
-  database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+  database.ref().orderByChild("dateAdded").on("child_added", function(snapshot) {
     // storing the snapshot.val() in a variable for convenience
     var sv = snapshot.val();
 
     // Console.loging the last user's data
-    console.log(sv.name);
-    console.log(sv.email);
-    console.log(sv.age);
-    console.log(sv.comment);
+    console.log(sv.employeeName);
+    console.log(sv.role);
+    console.log(sv.startDate);
+    console.log(sv.monthlyRate);
 
-    // Change the HTML to reflect
-    $("#name-display").text(sv.name);
-    $("#email-display").text(sv.email);
-    $("#age-display").text(sv.age);
-    $("#comment-display").text(sv.comment);
+   //prepends new row to table
+   $("#employee-table").append(`<tr><td>${sv.employeeName}</td><td>${sv.role}</td><td>${sv.startDate}</td><td>${sv.monthlyRate}</td>
+   </tr>`)
 
     // Handle the errors
   }, function(errorObject) {
@@ -69,3 +68,4 @@ $(document).ready(function() {
   });
 
 });
+
